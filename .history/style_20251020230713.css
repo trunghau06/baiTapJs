@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background: #0d1117; 
+    color: #00ff99; 
+    font-family: monospace;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- ICON BAY LƯỢN --- */
+.floating-icon {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: float 20s infinite ease-in-out;
+}
+
+.icon-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.icon-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.icon-3 {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: -10s;
+}
+
+.icon-4 {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: -15s;
+}
+
+.icon-5 {
+    top: 50%;
+    left: 5%;
+    animation-delay: -7s;
+}
+
+.icon-6 {
+    top: 60%;
+    right: 8%;
+    animation-delay: -12s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, -80px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-30px, -120px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-80px, -50px) rotate(270deg);
+    }
+}
+
+/* --- KHUNG VIỀN ĐỘNG BỌC NGOÀI --- */
+.border-wrapper {
+    position: relative;
+    padding: 5px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, 
+        #00ff99, 
+        #00ccff, 
+        #9933ff, 
+        #ff3366, 
+        #ffcc00, 
+        #00ff99
+    );
+    background-size: 400%;
+    animation: gradient-rotate 3s linear infinite;
+    z-index: 10;
+}
+
+@keyframes gradient-rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- KHUNG ĐỒNG HỒ BÊN TRONG --- */
+.showThoiGian {
+    position: relative;
+    font-size: 70px;
+    letter-spacing: 2px;
+    padding: 1em 1.5em;
+    border-radius: 20px;
+    text-align: center;
+    color: #00ff99;
+    background: #0d1117;
+    max-width: 90vw;
+}
+
+/* Responsive: giảm kích thước khi màn hình nhỏ */
+@media (max-width: 768px) {
+    .showThoiGian {
+        font-size: 50px;
+        padding: 0.8em 1.2em;
+    }
+    
+    .floating-icon {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .showThoiGian {
+        font-size: 36px;
+        padding: 0.6em 1em;
+    }
+    
+    .floating-icon {
+        font-size: 24px;
+    }
+}

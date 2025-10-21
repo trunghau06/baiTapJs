@@ -1,0 +1,43 @@
+/* styles.css */
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background: #0d1117; 
+  color: #00ff99; 
+  font-family: monospace;
+}
+
+/* --- KHUNG ĐỒNG HỒ --- */
+.showThoiGian {
+  position: relative;
+  font-size: 70px;
+  letter-spacing: 2px;
+  padding: 1em 1.5em;
+  border-radius: 20px;
+  text-align: center;
+  color: #00ff99;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+  overflow: hidden;
+  max-width: 90vw;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Màn hình nhỏ hơn 768px (tablet & điện thoại ngang) */
+@media (max-width: 768px) {
+  .showThoiGian {
+    font-size: 50px;
+    padding: 20px 40px;
+  }
+}
+
+/* Màn hình nhỏ hơn 480px (điện thoại dọc) */
+@media (max-width: 480px) {
+  .showThoiGian {
+    font-size: 36px;
+    padding: 15px 25px;
+  }
+}

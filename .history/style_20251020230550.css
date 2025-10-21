@@ -1,0 +1,67 @@
+
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background: #0d1117; 
+  color: #00ff99; 
+  font-family: monospace;
+}
+
+.border-wrapper {
+  position: relative;
+  padding: 5px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, 
+    #00ff99, 
+    #00ccff, 
+    #9933ff, 
+    #ff3366, 
+    #ffcc00, 
+    #00ff99
+  );
+  background-size: 400%;
+  animation: gradient-rotate 3s linear infinite;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- KHUNG ĐỒNG HỒ BÊN TRONG --- */
+.showThoiGian {
+  position: relative;
+  font-size: 70px;
+  letter-spacing: 2px;
+  padding: 1em 1.5em;
+  border-radius: 20px;
+  text-align: center;
+  color: #00ff99;
+  background: #0d1117;
+  max-width: 90vw;
+}
+
+/* Responsive: giảm kích thước khi màn hình nhỏ */
+@media (max-width: 768px) {
+  .showThoiGian {
+    font-size: 50px;
+    padding: 0.8em 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .showThoiGian {
+    font-size: 36px;
+    padding: 0.6em 1em;
+  }
+}

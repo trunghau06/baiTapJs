@@ -1,0 +1,87 @@
+/* styles.css */
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background: #0d1117; 
+  color: #00ff99; 
+  font-family: monospace;
+}
+
+/* --- KHUNG ĐỒNG HỒ --- */
+.showThoiGian {
+  position: relative;
+  font-size: 70px;
+  letter-spacing: 2px;
+  padding: 1em 1.5em;
+  border-radius: 20px;
+  text-align: center;
+  color: #00ff99;
+  overflow: hidden;
+  max-width: 90vw;
+  background: #0d1117;
+}
+
+/* Viền động gradient chạy liên tục */
+.showThoiGian::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #00ff99, 
+    #00ccff, 
+    #9933ff, 
+    #ff3366, 
+    #ffcc00, 
+    #00ff99
+  );
+  background-size: 400%;
+  border-radius: 20px;
+  z-index: -1;
+  animation: gradient-rotate 3s linear infinite;
+}
+
+/* Lớp nền để tạo hiệu ứng viền */
+.showThoiGian::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: #0d1117;
+  border-radius: 18px;
+  z-index: -1;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive: giảm kích thước khi màn hình nhỏ */
+@media (max-width: 768px) {
+  .showThoiGian {
+    font-size: 50px;
+    padding: 0.8em 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .showThoiGian {
+    font-size: 36px;
+    padding: 0.6em 1em;
+  }
+}

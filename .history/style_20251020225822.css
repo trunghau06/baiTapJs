@@ -1,0 +1,80 @@
+/* styles.css */
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background: #0d1117; 
+  color: #00ff99; 
+  font-family: monospace;
+}
+
+/* --- KHUNG ĐỒNG HỒ --- */
+.showThoiGian {
+  position: relative;
+  font-size: 70px;
+  letter-spacing: 2px;
+  padding: 30px 60px;
+  border-radius: 20px;
+  text-align: center;
+  color: #00ff99;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+  overflow: hidden;
+  max-width: 90vw;
+}
+
+/* --- VIỀN CHẠY SÁNG --- */
+.showThoiGian::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    90deg,
+    #00ff99,
+    #00ffff,
+    #00ff99,
+    #00ffff
+  );
+  background-size: 400% 400%;
+  border-radius: 20px;
+  z-index: -1;
+  animation: chayvien 3s linear infinite;
+}
+
+@keyframes chayvien {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- NỀN BÊN TRONG --- */
+.showThoiGian::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #0d1117;
+  border-radius: 18px;
+  z-index: 0;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Màn hình nhỏ hơn 768px (tablet & điện thoại ngang) */
+@media (max-width: 768px) {
+  .showThoiGian {
+    font-size: 50px;
+    padding: 20px 40px;
+  }
+}
+
+/* Màn hình nhỏ hơn 480px (điện thoại dọc) */
+@media (max-width: 480px) {
+  .showThoiGian {
+    font-size: 36px;
+    padding: 15px 25px;
+  }
+}
