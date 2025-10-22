@@ -26,22 +26,11 @@ body {
 }
 
 .container {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    border-radius: 50px;
-    background: #FFFFFF; 
-    z-index: 1;
-    overflow: hidden;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 5px;
+    border: 5px solid;
     border-radius: 50px;
     background: linear-gradient(45deg, 
         #00ff99, 
@@ -53,24 +42,7 @@ body {
     );
     background-size: 400%;
     animation: gradient-rotate 3s linear infinite;
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor; 
-    z-index: -1;
-}
-
-@keyframes gradient-rotate {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    
 }
 
 #display {

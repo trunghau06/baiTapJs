@@ -32,11 +32,12 @@ body {
     align-items: center;
     padding: 50px;
     border-radius: 50px;
-    background: #FFFFFF; 
+    background: #000; /* màu nền thật bên trong khung */
     z-index: 1;
     overflow: hidden;
 }
 
+/* Tạo viền chuyển động bằng pseudo-element */
 .container::before {
     content: "";
     position: absolute;
